@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.luv2code.springdemo</groupId>
-	<artifactId>spring-crm-rest</artifactId>
+	<groupId>apoteka</groupId>
+	<artifactId>v2</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
@@ -18,7 +18,10 @@
 	</properties>
 
 	<dependencies>
+	
+	
 
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -53,10 +56,11 @@
 		</dependency>
 
 		<!-- MySQL -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.connector.version}</version>
+			<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <scope>runtime</scope>
+		    <version>8.0.13</version>
 		</dependency>
 
 		<!-- C3PO -->
@@ -79,14 +83,7 @@
 			<version>2.3.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-
-
-		<!-- to compensate for java 9 not including jaxb -->
+		<!-- to compensate for java 9+ not including jaxb -->
 		<dependency>
 		    <groupId>javax.xml.bind</groupId>
 		    <artifactId>jaxb-api</artifactId>
@@ -97,7 +94,8 @@
 
 	<build>
 
-		<finalName>spring-crm-rest</finalName>
+
+		<finalName>apoteka-online</finalName>
 
 		<plugins>
 
@@ -112,44 +110,7 @@
 			
 
 		</plugins>
-		
-		<resources>
 
-<resource>
-
-<directory>src/main/resources</directory>
-
-</resource>
-
-<resource>
-
-<directory>src/main/java</directory>
-
-</resource>
-
-<resource>
-
-<directory>src/main/api</directory>
-
-</resource>
-
-</resources>
-
-<testResources>
-
-<testResource>
-
-<directory>src/test/munit</directory>
-
-</testResource>
-
-<testResource>
-
-<directory>src/test/resources</directory>
-
-</testResource>
-
-</testResources>
             
 	</build>
 </project>

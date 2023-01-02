@@ -1,4 +1,4 @@
-package apotekaDAO;
+package apoteka.dao;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-import apotekaEntity.Products;
+
+import apoteka.entity.Products;
 @Repository
 public class ProductsDAOImpl implements ProductsDAO {
 	
@@ -18,7 +18,7 @@ public class ProductsDAOImpl implements ProductsDAO {
 	
 	 
 	
-	@Transactional
+	@Override
 	public List<Products> getProducts() {
 		
 		//get  session
@@ -32,6 +32,17 @@ public class ProductsDAOImpl implements ProductsDAO {
 		
 		//return r
 		return products;
+	}
+	@Override
+	public Products getProducts(int theId) {
+
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// now retrieve/read from database using the primary key
+		Products theProducts = currentSession.get(Products.class, theId);
+		
+		return theProducts;
 	}
 
 }

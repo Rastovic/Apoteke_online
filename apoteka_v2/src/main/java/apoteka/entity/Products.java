@@ -1,4 +1,4 @@
-package apotekaEntity;
+package apoteka.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -47,6 +47,22 @@ public class Products {
 
 
 
+	public int getProductID() {
+		return productID;
+	}
+
+
+
+
+
+	public void setProductID(int productID) {
+		this.productID = productID;
+	}
+
+
+
+
+
 	public String getProductName() {
 		return productName;
 	}
@@ -81,7 +97,7 @@ public class Products {
 
 
 
-	public boolean isAvailability() {
+	public boolean getAvailability() {
 		return availability;
 	}
 
@@ -91,7 +107,7 @@ public class Products {
 	}
 
 
-	public boolean isPrescription() {
+	public boolean getPrescription() {
 		return prescription;
 	}
 

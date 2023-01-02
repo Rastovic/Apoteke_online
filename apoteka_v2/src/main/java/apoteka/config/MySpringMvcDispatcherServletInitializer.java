@@ -1,4 +1,4 @@
-package Configuration;
+package apoteka.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
